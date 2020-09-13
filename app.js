@@ -207,15 +207,19 @@ new Vue({
          });
       },
 
-      classes () {
-         return [
-            'sort-control',
-            this.order.dir === 1 ? 'ascending' : 'descending'
-         ]
+      sortType () {
+         return this.order.dir === 1 ? 'ascending' : 'descending'
       }
    },
 
    methods: {
+      classes (column) {
+         return [
+            'sort-control',
+            column === this.order.column ? this.sortType : ''
+         ]
+      },
+
       sort (column) {
          this.order.column = column;
          this.order.dir *= -1;
