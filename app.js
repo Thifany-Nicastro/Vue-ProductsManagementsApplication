@@ -278,7 +278,7 @@ new Vue({
                price: ''
             }
 
-            $(this.$refs.vuemodal).modal
+            $(this.$refs.vuemodal).modal('hide');
          } else {
             alert("Please fill in the form properly")
          }
